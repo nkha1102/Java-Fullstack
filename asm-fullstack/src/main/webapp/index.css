@@ -1,0 +1,31 @@
+#profile-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#profile {
+    text-decoration: none;
+    color: #353b48;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background: none;
+    padding: 0;
+}
+#profile p {
+    margin-bottom: 10px;
+}
+.ongNoi {
+    padding: 10px;
+}
+.cha {
+    border: 1px solid #353b48;
+    border-radius: 10px;
+}
+#button {
+    display: flex;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    justify-content: space-between;
+}
