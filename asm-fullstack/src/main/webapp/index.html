@@ -28,30 +28,136 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title" id="modal-tieude">Nhân Viên</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="Remove()"></button>
+                    <h4 class="modal-title">Nhân Viên</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="container">
                     <div class="modal-body row" id="modalBody">
-                        
+                        <img src="" alt="anh nhan vien" id="modalImage" class="col-6">
+                        <div id="modalDetail" class="col-6">
+                            <div id="id"></div><br>
+                            <div id="name"></div><br>
+                            <div id="dob"></div><br>
+                            <div id="role"></div><br>
+                            <div id="sex"></div><br>
+                            <div id="password"></div><br>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer" id="modalFooter">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="Remove()">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
                 </div>
 
             </div>
         </div>
     </div>
     <br>
+    <!-- The Modal -->
+    <div class="modal" id="addModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Thêm Nhân Viên</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="container">
+                    <div class="modal-body row" id="modalBody">
+                        <ul id="addDetail">
+                            <li>Tên: <input id="tenInput" type="text"></li><br>
+                            <li>Ngày Sinh: <input id="ngaySinhInput" type="text"></li><br>
+                            <li>Chức vụ: <input id="roleInput" type="text"></li><br>
+                            <li>Giới tính: <input id="sexInput" type="text"></li><br>
+                            <li>Mật khẩu: <input id="passwordInput" type="text"></li><br>
+                            <li>Link ảnh: <input id="imgInput" type="text"></li><br>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" id="modalFooter">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="Add()">Thêm</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal" id="updateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Sửa Nhân Viên</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="container">
+                    <div class="modal-body row" id="modalBody">
+                        <ul id="updateDetail">
+                            <li>ID: <input id="idInputU" type="text"></li><br>
+                            <li>Tên: <input id="tenInputU" type="text"></li><br>
+                            <li>Ngày Sinh: <input id="ngaySinhInputU" type="text"></li><br>
+                            <li>Chức vụ: <input id="roleInputU" type="text"></li><br>
+                            <li>Giới tính: <input id="sexInputU" type="text"></li><br>
+                            <li>Mật khẩu: <input id="passwordInputU" type="text"></li><br>
+                            <li>Link ảnh: <input id="imgInputU" type="text"></li><br>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" id="modalFooter">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="Update()">Chỉnh sửa</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Xóa Nhân Viên</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="container">
+                    <div class="modal-body row" id="modalBody">
+                        <ul id="deleteDetail">
+                            <li>ID: <input id="idInputD" type="text"></li><br>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" id="modalFooter">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" onclick="Delete()">Xóa</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div id="button">
-        <button data-bs-toggle="modal" data-bs-target="#myModal" id="modalAdd" class="btn btn-primary" onclick="modalAdd()">Add</button>
-        <button data-bs-toggle="modal" data-bs-target="#myModal" id="modalUpdate" class="btn btn-primary" onclick="modalUpdate()">Update</button>
-        <button data-bs-toggle="modal" data-bs-target="#myModal" id="modalDelete" class="btn btn-primary" onclick="modalDelete()">Delete</button>
+        <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-primary">Thêm</button>
+        <button data-bs-toggle="modal" data-bs-target="#updateModal" class="btn btn-primary">Chỉnh sửa</button>
+        <button data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-primary">Xóa</button>
     </div>
     <br>
 
